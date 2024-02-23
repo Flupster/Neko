@@ -1,0 +1,34 @@
+{
+  "name": "neko",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build:api": "bun build ./src/index.ts --compile --outfile=./dist/nekoapi",
+    "build:socket": "bun build ./src/socket/index.ts --compile --outfile=./dist/nekosocket",
+    "build:scraper": "bun build ./src/scraper/index.ts --compile --outfile=./dist/nekoscraper",
+    "build:irc": "bun build ./src/irc/index.ts --compile --outfile=./dist/nekoirc",
+    "build": "bun run build:api; bun run build:socket; bun run build:scraper; bun run build:irc"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^2.1.0",
+    "@types/bencode": "^2.0.4",
+    "bencode": "^4.0.0",
+    "cheerio": "^1.0.0-rc.12",
+    "fastify": "^4.26.0",
+    "fastify-socket.io": "^5.0.0",
+    "matrix-org-irc": "^2.2.0",
+    "meilisearch": "^0.37.0",
+    "mongoose": "^8.1.1",
+    "pino": "^8.18.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "zod": "^3.22.4"
+  }
+}

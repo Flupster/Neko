@@ -22,6 +22,9 @@ type NekoRelease = {
   seeders: number;
   size: number;
   pubDate: Date;
+  remake: boolean;
+  trusted: boolean;
+  batch: boolean;
   updatedAt: Date;
   createdAt: Date;
 };

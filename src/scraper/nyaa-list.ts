@@ -56,6 +56,9 @@ export const parseReleases = (text: string) => {
         seeders: parseInt($(tds[5]).text()),
         size: parseIecSize($(tds[3]).text()),
         pubDate: new Date($(tds[4]).text()),
+        trusted: $(el).hasClass('success'),
+        remake: $(el).hasClass('danger'),
+        batch: $(el).hasClass('warning'),
         createdAt: new Date(),
         updatedAt: new Date(),
       };

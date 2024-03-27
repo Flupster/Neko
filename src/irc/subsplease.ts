@@ -4,6 +4,7 @@ import { bytesToHumanReadable } from "../utils";
 import bot from "./irc";
 
 const log = logger("subsplease");
+log.info("init");
 
 socket.on("release", (release) => {
   if (!release.title.includes("[SubsPlease]")) return;
@@ -11,6 +12,8 @@ socket.on("release", (release) => {
     log.warn("untrusted subsplease release");
     return;
   }
+
+  log.info({ release: release.id }, "got release");
 
   const size = bytesToHumanReadable(release.size).replace("i", "");
   const message = `[Release] ${release.title} (${size}) - https://nyaa.si/view/${release.id} - https://nyaa.si/view/${release.id}/torrent`;

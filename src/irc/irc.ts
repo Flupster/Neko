@@ -9,7 +9,7 @@ const bot = new irc.Client(process.env.IRC_HOST, process.env.IRC_NICK, {
   channels: [process.env.IRC_CHANNEL],
   autoConnect: true,
   autoRejoin: true,
-  debug: true,
+  debug: false,
   floodProtection: true,
   floodProtectionDelay: 1000,
 });
